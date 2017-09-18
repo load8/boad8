@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置别名 -->
+    <typeAliases>
+        <typeAlias type="com.org.rasp.model.Userinfo" alias="userinfo"/>
+        <typeAlias type="com.org.rasp.model.User" alias="user"/>
+    </typeAliases>    
+	<!-- 配置Mybatis映射文件  -->
+<!--<mappers>
+        <mapper resource="resource/config/sqlMap/userinfo.xml"/>
+    </mappers>  -->
+  
+<!--<sqlMap resource="resource/config/sqlMap/user.xml"/>  -->
+    
+</configuration>

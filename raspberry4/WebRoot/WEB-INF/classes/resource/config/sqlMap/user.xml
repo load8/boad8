@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <!-- 接口名 -->
+<mapper namespace="com.org.rasp.dao.UserDao">
+
+	<resultMap id="getMuliRoleResult" type="user">
+		<result property="userId"     column="user_id" />
+		<result property="name"   	  column="name" />
+		<result property="email"      column="user_email" />
+	    <result property="age"		  column="user_age" />
+		<result property="sex" 		  column="user_sex" />
+		<result property="modifyDate" column="modifydate" />
+		<result property="creatDate"  column="creatdate" />
+	</resultMap>
+            
+    <select id="getAllUser" resultMap="getMuliRoleResult">
+        select * from r_user    
+    </select> 
+
+    <insert id="addUser" parameterType="com.org.rasp.entity.User">
+        insert into r_user values(#{userId},#{userName},#{email},null,null,null,null)
+    </insert>
+
+    <delete id="delUser" parameterType="int">
+        delete from r_user where user_id=#{userId}
+    </delete> 
+    
+     <select id="getUser" resultMap="int">
+        select * from r_user   where  user_id=#{userId}
+    </select> 
+
+    <update id="updateUser" parameterType="com.org.rasp.entity.User">
+        update  r_user set user_email=#{email} where  user_id=#{userId}
+    </update>
+
+</mapper>

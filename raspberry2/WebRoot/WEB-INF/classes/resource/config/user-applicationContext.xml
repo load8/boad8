@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="  
+http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+http://www.springframework.org/schema/context  
+http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+">
+
+<!-- 	
+	<bean id="appsBean" class="org.bussiness.utility.apps.AppsBean"/>
+
+	<bean id="appsAction" class="org.bussiness.utility.apps.AppsAction">
+		<property name="methodNameResolver">
+			<ref bean="paraMethodResolver" />
+		</property>
+		<property name="appsService">
+			<ref local="appsService" />
+		</property>
+		<property name="appsBean">
+			<ref local="appsBean" />
+		</property>
+		<property name="datasourceService">
+			<ref bean="datasourceService" />
+		</property>
+		<property name="topView">
+			<value>utility/top</value>
+		</property>
+		<property name="allAppsList">
+			<value>apps/allAppsList</value>
+		</property>	
+		<property name="addAppsInfo">
+			<value>apps/addAppsInfo</value>
+		</property>
+		<property name="updateAppsInfo">
+			<value>apps/updateAppsInfo</value>
+		</property>
+		<property name="appsDetailInfo">
+			<value>apps/appsDetailInfo</value>
+		</property>
+		<property name="orderApps">
+			<value>apps/orderApps</value>
+		</property>
+		<property name="updateAppsPidSuccess">
+			<value>apps/updateAppsPidSuccess</value>
+		</property>
+	</bean>
+	
+	<bean id="appsService" class="org.bussiness.utility.apps.AppsService">
+		<property name="appsDao">
+			<ref local="appsDao" />
+		</property>
+		<property name="roleAppsDao">
+			<ref bean="roleAppsDao" />
+		</property>
+	</bean>
+	
+	<bean id="appsDao" class="org.bussiness.utility.apps.AppsDao">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	
+	
+	<bean id="appsServiceAop" parent="ServiceAop">
+		<property name="target">
+			<ref local="appsService" />
+		</property>
+	</bean> -->
+</beans>

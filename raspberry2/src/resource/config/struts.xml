@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  
+    <!-- 常量配置区 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <!-- 开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 编码格式 -->
+    <constant name="struts.i18n.encoding" value="utf-8"></constant>
+    <!-- 主题 -->
+	<constant name="struts.ui.theme" value="simple" />
+    <!-- action扩展名 -->
+    <constant name="struts.action.extension" value="action,do"></constant>    
+    <!-- 设置上传文件大小 -->
+    <constant name="struts.multipart.maxSize" value="10485760"></constant>
+    <!--  将struts2交给spring管理 --> 
+    <constant name="struts.objectFactory" value="spring"></constant>
+ 
+	<!-- 国际化资源文件名称 -->
+	<constant name="struts.custom.i18n.resources" value="i18n" />
+	<!-- 是否自动加载国际化资源文件  -->
+	<constant name="struts.i18n.reload" value="false" />
+	<!-- convention类重新加载 -->
+	<constant name="struts.convention.classes.reload" value="false" />
+	<!-- 浏览器是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="true" />
+
+	<!-- 结果资源的路径 -->
+	<constant name="struts.convention.result.path" value="/" />
+	<!-- URL资源分隔符 -->
+	<constant name="struts.convention.action.name.separator" value="_" />  
+	  
+    <package name="default" namespace="/" extends="struts-default">
+      
+       <action name="userAction" class="com.org.rasp.model.UserAction" >
+          <result name="SUCCESS">/userjsp/uindex.jsp</result>  
+          <result name="ERROR">/index1.jsp</result> 
+          <result name="list">/userjsp/userList.jsp</result>     
+       </action> 
+       
+       <action name="*_*" class="com.org.rasp.action.Insert" method="{2}" >
+ 
+          <result name="ERROR">/index1.jsp</result> 
+    
+       </action>   
+       	
+	</package>
+    <!-- <include file="resource/config/struts-upload.xml"/> -->
+   
+</struts>

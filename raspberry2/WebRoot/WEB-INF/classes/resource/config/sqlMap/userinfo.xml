@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <!-- namespace必须与对应的接口全类名一致 id:必须与对应接口的某个对应的方法名一致 parameterType参数类型 resultType返回值类型-->
+<mapper namespace="com.org.rasp.dao.UserinfoDao">
+
+	<resultMap id="getUserInfoResult" type="userinfo">
+		<result property="userId"     column="user_id" />
+		<result property="userName"   column="user_name" />
+		<result property="email"      column="user_email" />
+	    <result property="age"		  column="user_age" />
+		<result property="sex" 		  column="user_sex" />
+		<result property="modifyDate" column="modifydate" />
+		<result property="creatDate"  column="creatdate" />
+	</resultMap>
+            
+    <select id="queryById"  parameterType="int" resultMap="getUserInfoResult">
+        select * from r_user    
+    </select> 
+    
+    <select id="userCount"  parameterType="Map" resultMap="getUserInfoResult">
+        select * from r_user    
+    </select> 
+    
+    <insert id="insertUserinfo" parameterType="com.org.rasp.model.Userinfo">
+        insert into r_user values(#{userId},#{userName},#{email},null,null,null,null)
+    </insert>
+
+    <delete id="deleteById" parameterType="int">
+        delete from r_user where user_id=#{userId}
+    </delete> 
+    
+    <update id="updateById" parameterType="int">
+     	delete from r_user where user_id=#{userId}
+    </update>
+    
+     <update id="updateBySelective" parameterType="userinfo">
+     	delete from r_user where user_id=#{userId}
+    </update>
+    
+</mapper>
